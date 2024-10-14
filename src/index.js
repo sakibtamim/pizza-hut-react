@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom/client";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <>
+      <Background />
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    </>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function Background() {
+  return (
+    <div
+      style={{
+        backgroundImage: "url('pizzas/pizza-bg.jpg')",
+        height: "100vh",
+        width: "100vw",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        opacity: 0.4,
+        zIndex: -1,
+      }}
+    ></div>
+  );
+}
+
+const root = ReactDom.createRoot(document.getElementById("root"));
+root.render(<App />);
